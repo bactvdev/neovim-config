@@ -12,6 +12,7 @@ return {
 
     vim.keymap.set('n', '<leader>1', ':1ToggleTerm<CR>', opts)
     vim.keymap.set('n', '<leader>2', ':2ToggleTerm<CR>', opts)
+    vim.keymap.set('n', '<leader>3', ':3ToggleTerm<CR>', opts)
     vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', opts)
 
     local Terminal = require('toggleterm.terminal').Terminal
