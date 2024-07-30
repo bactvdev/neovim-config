@@ -14,6 +14,7 @@ M.execs = {
   "html",
   "cssls",
   "tailwindcss",
+  "jdtls"
 }
 
 function M.config()
