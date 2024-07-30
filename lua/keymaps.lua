@@ -21,22 +21,10 @@ keymap.set("n", "<leader>q", "<cmd>confirm q<CR>", opts)
 keymap.set("n", "<leader>w", "<cmd>lua vim.wo.wrap = not vim.wo.wrap<CR>", opts)
 
 -- Tabs
-
--- Move to previous/next
-keymap.set('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)
-keymap.set('n', '<A-.>', '<Cmd>BufferNext<CR>', opts)
-
--- Re-order to previous/next
-keymap.set('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', opts)
-keymap.set('n', '<A->>', '<Cmd>BufferMoveNext<CR>', opts)
-
--- Pin/unpin buffer
-keymap.set('n', '<A-p>', '<Cmd>Bufferpin<CR>', opts)
-
--- Close buffer
-keymap.set('n', '<C-c>', '<Cmd>BufferClose<CR>', opts)
-keymap.set('n', '<C-x>', '<Cmd>BufferCloseAllButCurrent<CR>', opts)
-
+keymap.set('n', '<Tab>', '<cmd>BufferLineCycleNext<cr>', opts)
+keymap.set('n', '<S-Tab>', '<cmd>BufferLineCyclePrev<cr>', opts)
+-- keymap.set('n', '<C-c>', '<cmd>BufferLinePickClose<cr>', opts)
+keymap.set('n', '<leader>c', '<cmd>BufferLineCloseOthers<cr>', opts)
 -- Lazy
 keymap.set('n', 'L', '<cmd>Lazy<CR>', opts)
 

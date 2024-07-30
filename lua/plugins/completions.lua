@@ -14,7 +14,7 @@ return {
     config = function()
       local cmp = require("cmp")
       require("luasnip.loaders.from_vscode").load({
-        include = { "html", "lua" }
+        include = { "html", "lua", "css", "vue" }
       })
 
       cmp.setup({
@@ -43,14 +43,16 @@ return {
           }),
       })
 
-      -- local capabilities = require("cmp_nvim_lsp").default_capabilities()
-      -- local lspconfig = require("lspconfig")
-      -- lspconfig.html.setup({
-      --   capabilities = capabilities,
-      -- })
-      -- lspconfig.gopls.setup({
-      --   capabilities = capabilities,
-      -- })
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+      local lspconfig = require("lspconfig")
+
+      lspconfig.cssls.setup({
+        capabilities = capabilities,
+      })
+      lspconfig.volar.setup({
+        capabilities = capabilities,
+        filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
+      })
     end,
   }
 }
