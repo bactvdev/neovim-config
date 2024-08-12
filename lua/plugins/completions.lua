@@ -14,7 +14,7 @@ return {
     config = function()
       local cmp = require("cmp")
       require("luasnip.loaders.from_vscode").load({
-        include = { "html", "lua", "css", "vue", "java" }
+        include = { "html", "lua", "css", "vue", "java", "c" }
       })
 
       cmp.setup({
@@ -54,6 +54,9 @@ return {
         filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
       })
       lspconfig.jdtls.setup({
+        capabilities = capabilities,
+      })
+      lspconfig.clangd.setup({
         capabilities = capabilities,
       })
     end,
