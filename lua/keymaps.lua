@@ -22,7 +22,7 @@ keymap.set("n", "<leader>w", "<cmd>lua vim.wo.wrap = not vim.wo.wrap<CR>", opts)
 
 -- Tabs
 keymap.set('n', '<C-n>', '<cmd>BufferLineCycleNext<cr>', opts)
--- keymap.set('n', '<S-Tab>', '<cmd>BufferLineCyclePrev<cr>', opts)
+keymap.set('n', '<C-A-n>', '<cmd>BufferLineCyclePrev<cr>', opts)
 -- keymap.set('n', '<C-c>', '<cmd>BufferLinePickClose<cr>', opts)
 keymap.set('n', '<leader>c', '<cmd>BufferLineCloseOthers<cr>', opts)
 -- Lazy
@@ -33,3 +33,6 @@ keymap.set('n', '<leader>cf', vim.lsp.buf.format, opts)
 keymap.set('n', '<C-->', '<cmd>DecreaseFont<cr>', opts)
 keymap.set('n', '<C-+>', '<cmd>IncreaseFont<cr>', opts)
 keymap.set('n', '<C-0>', '<cmd>ResetFontSize<cr>', opts)
+
+-- Open preview HTML, JS, CSS
+keymap.set('n', '<C-A-b>', '<cmd>BrowserPreview<cr>', opts)

@@ -15,7 +15,8 @@ M.execs = {
   "cssls",
   "tailwindcss",
   "jdtls",
-  "clangd"
+  "clangd",
+  "markdown_oxide"
 }
 
 function M.config()
@@ -44,6 +45,7 @@ function M.config()
       null_ls.builtins.formatting.goimports,
       null_ls.builtins.formatting.prettier,
       null_ls.builtins.formatting.eslint,
+      null_ls.builtins.formatting.markdownlint,
       null_ls.builtins.diagnostics.eslint,
       null_ls.builtins.code_actions.eslint,
     },
