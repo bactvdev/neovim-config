@@ -23,16 +23,28 @@ end
 --   capabilities = nvlsp.capabilities,
 -- }
 
-local vue_language_server_path = '/home/bactv/.nvm/versions/node/v20.15.0/lib/node_modules/@vue/language-server'
+local vue_language_server_path = "/home/bactv/.nvm/versions/node/v20.15.0/lib/node_modules/@vue/language-server"
 lspconfig.tsserver.setup {
   init_options = {
     plugins = {
       {
-        name = '@vue/typescript-plugin',
+        name = "@vue/typescript-plugin",
         location = vue_language_server_path,
-        languages = { 'vue' },
+        languages = { "vue" },
       },
     },
   },
-  filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+  filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+}
+
+lspconfig.jsonls.setup {
+  settings = {
+    json = {
+      schemas = require("schemastore").json.schemas(),
+      validate = { enable = true },
+    },
+  },
+  on_attach = nvlsp.on_attach,
+  on_init = nvlsp.on_init,
+  capabilities = nvlsp.capabilities,
 }

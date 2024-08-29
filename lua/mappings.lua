@@ -11,6 +11,7 @@ map("i", "<C-s>", "<ESC>:w<CR>", { desc = "General Save file" })
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 map("n", "<C-a>", "gg<S-v>G")
+map("n", "<C-b>", "va{")
 
 -- nvimtree
 map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
