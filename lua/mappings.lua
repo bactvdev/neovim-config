@@ -65,3 +65,18 @@ map("n", "<leader>g", function()
   local lazygit = Terminal:new { cmd = "lazygit", hidden = true, direction = "float" }
   lazygit:toggle()
 end, { desc = "Lazy Git" })
+
+-- Go debugger
+map("n", "<leader>b", require("dap").toggle_breakpoint, { desc = "Toggle breakpoint" })
+map("n", "<F5>", require("dap").continue, { desc = "Start debugging" })
+map("n", "1", require("dap").step_over, { desc = "Debug next step" })
+map("n", "<leader>dc", function()
+  require("dapui").toggle()
+  require("dap").clear_breakpoints()
+  require("dap").terminate()
+end, { desc = "Terminate debugging" })
+
+-- Markdown preview
+-- mapping for Markdown Preview
+map("n", "<leader>mp", "<CMD> MarkdownPreview<CR>", { desc = "Open Preview" })
+map("n", "<leader>mc", "<CMD> MarkdownPreviewStop<CR>", { desc = "Close Preview" })
