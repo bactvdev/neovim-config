@@ -10,9 +10,33 @@ map("i", "jk", "<ESC>")
 map("i", "<C-s>", "<ESC>:w<CR>", { desc = "General Save file" })
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
-map("n", "<C-a>", "gg<S-v>G")
-map("n", "<C-b>", "va{")
+map("n", "<C-a>", "gg<S-v>G", { desc = "Select all" })
+map("n", "<C-b>", "va{", { desc = "Select a block { }" })
+map(
+  "n",
+  "<C-Right>",
+  "<cmd>vertical resize +5<CR>",
+  { desc = "Increase the window width", noremap = true, silent = true }
+)
+map(
+  "n",
+  "<C-Left>",
+  "<cmd>vertical resize -5<CR>",
+  { desc = "Decrease the window width", noremap = true, silent = true }
+)
 
+map(
+  "n",
+  "<C-Up>",
+  "<cmd>horizontal resize +2<CR>",
+  { desc = "Increase the window height", noremap = true, silent = true }
+)
+map(
+  "n",
+  "<C-Down>",
+  "<cmd>horizontal resize -2<CR>",
+  { desc = "Decrease the window height", noremap = true, silent = true }
+)
 -- nvimtree
 map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
 
