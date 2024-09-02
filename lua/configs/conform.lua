@@ -8,14 +8,13 @@ local options = {
     vue = { "prettier" },
     jsx = { "prettier" },
     tsx = { "prettier" },
+    go = { "goimports" },
   },
 
   format_on_save = {
     timeout_ms = 500,
     lsp_format = "fallback",
   },
-
-
 }
 
 return options
