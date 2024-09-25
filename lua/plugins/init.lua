@@ -26,4 +26,17 @@ return {
       require("nvim-ts-autotag").setup {}
     end,
   },
+  -- {
+  --   "nvim-telescope/telescope.nvim",
+  --   config = function()
+  --     require("telescope").setup {
+  --       defaults = {
+  --         vimgrep_arguments = {
+  --           "--no-ignore",
+  --           "--hidden",
+  --         },
+  --       },
+  --     }
+  --   end,
+  -- },
 }

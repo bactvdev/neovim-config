@@ -54,7 +54,12 @@ map("n", "<C-c>", function()
 end, { desc = "buffer close" })
 
 -- telescope
-map("n", "<leader><leader>", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
+map(
+  "n",
+  "<leader><leader>",
+  "<cmd>Telescope find_files hidden=true no_ignore=true<cr>",
+  { desc = "telescope find files" }
+)
 
 map("n", "<C-f>", function()
   require("conform").format { lsp_fallback = true }
