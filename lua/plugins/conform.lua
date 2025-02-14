@@ -5,7 +5,7 @@ return function(use)
 			require("conform").setup({
 				formatters_by_ft = {
 					lua = { "stylua" },
-					php = { "php_cs_fixer" },
+					php = { "phpcsfixer" },
 					go = { "goimports" },
 				},
 				format_on_save = {

@@ -9,6 +9,7 @@ local keymap = vim.keymap
 
 -- toggle neotree
 keymap.set("n", "<leader>e", ":Neotree toggle<CR>", opts)
+keymap.set("n", "<leader>bf", ":Neotree float buffers<CR>", opts)
 
 keymap.set("n", "<C-h>", "<C-w>h", opts)
 keymap.set("n", "<C-l>", "<C-w>l", opts)
