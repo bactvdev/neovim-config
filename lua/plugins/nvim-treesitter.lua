@@ -18,6 +18,7 @@ return function(use)
 					"json",
 					"php",
 					"yaml",
+					"python",
 				},
 				sync_install = false,
 				auto_install = true,

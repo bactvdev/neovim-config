@@ -7,7 +7,15 @@ return function(use)
 		},
 		config = function()
 			require("mason").setup({
-				ensure_installed = { "stylua", "prettierd", "prettier", "php_cs_fixer", "eslint_d", "goimports" },
+				ensure_installed = {
+					"stylua",
+					"prettierd",
+					"prettier",
+					"php_cs_fixer",
+					"eslint_d",
+					"goimports",
+					"pyright",
+				},
 				automatic_installation = true,
 			})
 			require("mason-lspconfig").setup({
@@ -77,6 +85,7 @@ return function(use)
 				volar = {
 					filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
 				},
+				pyright = {},
 			}
 
 			for server, opts in pairs(lsp_servers) do

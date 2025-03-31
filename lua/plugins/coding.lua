@@ -41,4 +41,13 @@ return function(use)
 			})
 		end,
 	})
+
+	use({
+		"danymat/neogen",
+		config = function()
+			require("neogen").setup({
+				enabled = true,
+			})
+		end,
+	})
 end
