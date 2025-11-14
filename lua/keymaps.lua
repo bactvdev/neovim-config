@@ -58,3 +58,5 @@ keymap.set("n", "<leader>-", ":split<CR>", opts)
 keymap.set("n", "<leader>rn", ":IncRename ")
 
 keymap.set("n", "<Leader>nf", ":lua require('neogen').generate()<CR>", opts)
+
+keymap.set("n", "<leader>cl", "^v$", opts)
