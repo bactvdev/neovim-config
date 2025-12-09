@@ -19,6 +19,7 @@ return function(use)
 					"php",
 					"yaml",
 					"python",
+					"dart",
 				},
 				sync_install = false,
 				auto_install = true,
@@ -26,6 +27,7 @@ return function(use)
 				highlight = {
 					enable = true,
 				},
+				indent = { enable = true },
 			})
 		end,
 	})

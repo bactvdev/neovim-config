@@ -25,10 +25,8 @@ return function(use)
 					"ts_ls",
 					"intelephense",
 					"html",
-					"volar",
 					"gopls",
 					"solc",
-					"solidity",
 					"jsonls",
 					"tailwindcss",
 				},
@@ -36,7 +34,8 @@ return function(use)
 			})
 
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
-			local lspconfig = require("lspconfig")
+
+			-- Define LSP server configurations using vim.lsp.config
 			local lsp_servers = {
 				gopls = {},
 				lua_ls = {},
@@ -88,11 +87,40 @@ return function(use)
 				pyright = {},
 			}
 
+			-- Configure each LSP server using the new vim.lsp.config API
 			for server, opts in pairs(lsp_servers) do
-				lspconfig[server].setup(vim.tbl_deep_extend("force", {
+				vim.lsp.config[server] = vim.tbl_deep_extend("force", {
 					capabilities = capabilities,
-				}, opts))
+				}, opts)
 			end
+
+			-- Auto-enable LSP servers based on filetype
+			local filetypes_to_servers = {
+				go = { "gopls" },
+				lua = { "lua_ls" },
+				css = { "cssls", "tailwindcss" },
+				scss = { "cssls" },
+				json = { "jsonls" },
+				javascript = { "ts_ls" },
+				typescript = { "ts_ls" },
+				javascriptreact = { "ts_ls" },
+				typescriptreact = { "ts_ls" },
+				vue = { "ts_ls", "volar" },
+				php = { "intelephense" },
+				html = { "html", "tailwindcss" },
+				python = { "pyright" },
+			}
+
+			vim.api.nvim_create_autocmd("FileType", {
+				callback = function(args)
+					local servers = filetypes_to_servers[args.match]
+					if servers then
+						for _, server in ipairs(servers) do
+							vim.lsp.enable(server)
+						end
+					end
+				end,
+			})
 		end,
 	})
 end

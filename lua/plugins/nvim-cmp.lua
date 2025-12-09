@@ -6,6 +6,8 @@ return function(use)
 			"hrsh7th/cmp-nvim-lsp",
 			"saadparwaiz1/cmp_luasnip",
 			"L3MON4D3/LuaSnip",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
 		},
 		config = function()
 			local luasnip = require("luasnip")
@@ -45,10 +47,12 @@ return function(use)
 						end
 					end, { "i", "s" }),
 				}),
-				sources = {
+				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" },
-				},
+					{ name = "buffer" },
+					{ name = "path" },
+				}),
 			})
 		end,
 	})
